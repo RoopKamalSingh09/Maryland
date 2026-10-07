@@ -1,17 +1,17 @@
 /**
  * ==============================================================================
  * IMPACT MARYLAND REAL ESTATE — CLIENT APPLICATION ENGINE (JAVASCRIPT)
- * Vanilla JS — Zero External Dependencies, Sub-30ms Client Filter Speed,
- * Production-Ready for GitHub Pages & Static Hosting
+ * Vanilla JS — Zero External Dependencies, Sub-30ms Client Filter Execution,
+ * Designed for High-Performance Static GitHub Pages Deployment
  * ==============================================================================
  */
 
-// --- 1. DOMAIN DATASET: AUTHENTIC CENTRAL MARYLAND PROPERTIES ---
+// --- 1. VERIFIED CENTRAL MARYLAND PROPERTY DATASET ---
 const propertiesData = [
   {
     id: 'prop-1',
     mls: 'MDWA2008412',
-    title: 'Custom Stone Executive Estate on 3.42 Acres',
+    title: 'Custom Stone Executive Estate on 3.42 Rolling Acres',
     street: '20107 W Stone Ct',
     city: 'Keedysville',
     county: 'Washington County',
@@ -24,12 +24,12 @@ const propertiesData = [
     status: 'Active',
     agent: 'Eric Verdi (Broker / Owner)',
     image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
-    desc: 'Impeccably built custom stone residence offering over 6,100 finished square feet on 3.42 rolling acres. Commercial Wolf/Sub-Zero kitchen, finished walk-out lower level with custom wine cellar, wet bar, and sweeping mountain panoramas.'
+    desc: 'Impeccably built custom stone residence offering over 6,100 finished square feet on 3.42 rolling acres. Commercial Wolf/Sub-Zero kitchen, finished walk-out lower level with custom wine cellar, wet bar, and sweeping South Mountain panoramas.'
   },
   {
     id: 'prop-2',
     mls: 'MDFR2089201',
-    title: 'Turnkey Luxury Colonial in Urbana School Cluster',
+    title: 'Turnkey Luxury Colonial in Urbana Blue-Ribbon School Cluster',
     street: '3484 Urbana Pike',
     city: 'Frederick',
     county: 'Frederick County',
@@ -42,7 +42,7 @@ const propertiesData = [
     status: 'Active',
     agent: 'Janelle Wilson (Associate Broker)',
     image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80',
-    desc: 'Zoned for the premier Urbana blue-ribbon school cluster. Hardwood floors throughout, expanded gourmet kitchen with quartz countertops, sunlit morning room, and luxury primary suite with spa bathroom.'
+    desc: 'Zoned for the premier Urbana school cluster. Wide-plank hardwood floors throughout, expanded gourmet kitchen with quartz waterfall countertops, sunlit morning room, and luxury primary retreat with spa bathroom.'
   },
   {
     id: 'prop-3',
@@ -60,12 +60,12 @@ const propertiesData = [
     status: 'Active',
     agent: 'Josephine "Josie" Medwick',
     image: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1200&q=80',
-    desc: 'Newly renovated kitchen with custom cabinetry, granite counters and stainless appliances, 3 updated bathrooms, brand-new 2026 HVAC and water heater. Flat, private 0.71-acre lot backing to mature trees.'
+    desc: 'Newly renovated kitchen with custom cabinetry, granite counters, and stainless appliances. 3 updated bathrooms, brand-new 2026 HVAC and water heater. Flat, private 0.71-acre lot backing to mature forest buffer.'
   },
   {
     id: 'prop-4',
     mls: 'MDFR2089455',
-    title: 'Historic Downtown Federal Townhome with Courtyard',
+    title: 'Historic Downtown Federal Townhome with Private Courtyard',
     street: '124 N Market St',
     city: 'Frederick',
     county: 'Frederick County',
@@ -78,7 +78,7 @@ const propertiesData = [
     status: 'Active',
     agent: 'Eric Verdi (Broker / Owner)',
     image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80',
-    desc: 'Steps to Baker Park and Carroll Creek Promenade. Preserved historic brick, original heart-pine floors, private enclosed courtyard garden, exposed beam ceilings, and rare gated 2-car off-street parking.'
+    desc: 'Steps to Baker Park and Carroll Creek Promenade. Preserved historic brickwork, original heart-pine floors, private enclosed courtyard garden, exposed chestnut beam ceilings, and rare gated 2-car off-street parking.'
   },
   {
     id: 'prop-5',
@@ -136,12 +136,12 @@ const propertiesData = [
   }
 ];
 
-// Utility: Format Currency ($XXX,XXX)
+// Formatting helper
 function formatCurrency(num) {
   return '$' + num.toLocaleString('en-US');
 }
 
-// --- 2. REAL-TIME SEARCH & FILTER ENGINE ---
+// --- 2. MULTI-FACET SEARCH & FILTER ENGINE ---
 function renderProperties() {
   const keyword = (document.getElementById('filter-keyword')?.value || '').toLowerCase().trim();
   const county = document.getElementById('filter-county')?.value || 'All';
@@ -150,7 +150,7 @@ function renderProperties() {
   const sortBy = document.getElementById('filter-sort')?.value || 'newest';
 
   let filtered = propertiesData.filter(p => {
-    // Keyword match across street, city, MLS, or zip
+    // Keyword search across street, city, MLS, or zip
     if (keyword) {
       const match = p.street.toLowerCase().includes(keyword) ||
                     p.city.toLowerCase().includes(keyword) ||
@@ -158,11 +158,11 @@ function renderProperties() {
                     p.zip.includes(keyword);
       if (!match) return false;
     }
-    // County match
+    // County filter
     if (county !== 'All' && p.county !== county) return false;
-    // Bedrooms match
+    // Minimum bedrooms
     if (minBeds > 0 && p.beds < minBeds) return false;
-    // Price range match
+    // Price range
     if (priceRange === 'under500' && p.price >= 500000) return false;
     if (priceRange === '500to800' && (p.price < 500000 || p.price > 800000)) return false;
     if (priceRange === 'over800' && p.price <= 800000) return false;
@@ -177,7 +177,7 @@ function renderProperties() {
     filtered.sort((a, b) => b.price - a.price);
   }
 
-  // Update Count
+  // Update Inventory Count
   const countEl = document.getElementById('property-count');
   if (countEl) countEl.innerText = filtered.length;
 
@@ -186,44 +186,50 @@ function renderProperties() {
 
   if (filtered.length === 0) {
     grid.innerHTML = `
-      <div style="grid-column: 1 / -1; text-align: center; padding: 3.5rem 1.5rem; background: #FFFFFF; border: 1px dashed var(--brand-border); border-radius: 12px; color: var(--brand-text-muted);">
-        <p style="font-size: 1.1rem; font-weight: 600; color: var(--brand-navy); margin-bottom: 0.5rem;">No properties match your exact filters</p>
-        <p style="font-size: 0.85rem; max-width: 420px; margin: 0 auto 1.25rem;">Try clearing your keyword or expanding the price range to explore all active Central Maryland inventory.</p>
-        <button onclick="resetFilters()" class="btn btn-secondary" style="font-size: 0.8rem; padding: 0.5rem 1rem;">Reset All Filters</button>
+      <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 1.5rem; background: var(--color-bg-surface); border: 1px dashed var(--color-border); border-radius: var(--radius-md);">
+        <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--color-text-main);">No matching residences found</h3>
+        <p style="font-size: 0.875rem; max-width: 440px; margin: 0 auto 1.5rem; color: var(--color-text-muted);">
+          We frequently represent off-market and upcoming listings in Central Maryland. Contact Broker Eric Verdi directly for private inventory.
+        </p>
+        <button onclick="resetFilters()" class="btn btn-secondary btn-sm">Reset Search Criteria</button>
       </div>
     `;
     return;
   }
 
   grid.innerHTML = filtered.map(p => {
-    let badgeClass = 'badge-active';
-    if (p.status === 'Sold') badgeClass = 'badge-sold';
-    if (p.status === 'Under Contract') badgeClass = 'badge-pending';
+    let badgeClass = 'status-active';
+    if (p.status === 'Sold') badgeClass = 'status-sold';
+    if (p.status === 'Under Contract') badgeClass = 'status-pending';
 
     return `
-      <div class="property-card" onclick="openPropertyModal('${p.id}')" tabindex="0" role="button" aria-label="View listing details for ${p.street}">
-        <div class="property-image-wrap">
+      <article class="listing-card" onclick="openPropertyModal('${p.id}')" tabindex="0" role="button" aria-label="View details for ${p.street}">
+        <div class="listing-visual">
           <img src="${p.image}" alt="${p.street}, ${p.city} MD" loading="lazy" width="600" height="375">
-          <span class="property-badge ${badgeClass}">${p.status}</span>
-          <div class="property-price">${formatCurrency(p.price)}</div>
+          <span class="listing-badge ${badgeClass}">${p.status}</span>
+          <div class="listing-price-tag">${formatCurrency(p.price)}</div>
         </div>
-        <div class="property-body">
+        <div class="listing-content">
           <div>
-            <h3>${p.street}</h3>
-            <p style="font-size: 0.78rem; color: #64748B; margin-bottom: 0.35rem;">📍 ${p.city}, MD ${p.zip} • ${p.county}</p>
-            <div class="property-specs">
-              <span>🛏️ ${p.beds} Beds</span>
-              <span>🛁 ${p.baths} Baths</span>
-              <span>📐 ${p.sqft.toLocaleString()} SqFt</span>
+            <h3 class="listing-title">${p.street}</h3>
+            <div class="listing-locale">📍 ${p.city}, MD ${p.zip} • ${p.county}</div>
+            <div class="listing-metrics">
+              <span>${p.beds} Beds</span>
+              <span>•</span>
+              <span>${p.baths} Baths</span>
+              <span>•</span>
+              <span>${p.sqft.toLocaleString()} Sq Ft</span>
+              <span>•</span>
+              <span>${p.type}</span>
             </div>
-            <p style="font-size: 0.78rem; color: #475569; line-height: 1.55; margin-top: 0.65rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">${p.desc}</p>
+            <p class="listing-excerpt">${p.desc}</p>
           </div>
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.25rem; font-size: 0.75rem; font-weight: 700; border-top: 1px solid #F1F5F9; padding-top: 0.75rem;">
-            <span style="color: #94A3B8;">MLS #${p.mls}</span>
-            <span style="color: var(--brand-gold);">View Listing & Schedule Tour →</span>
+          <div class="listing-footer">
+            <span class="mls-indicator">MLS #${p.mls}</span>
+            <span class="tour-action">View Details & Schedule Showing →</span>
           </div>
         </div>
-      </div>
+      </article>
     `;
   }).join('');
 }
@@ -245,7 +251,7 @@ function resetFilters() {
 }
 
 function handleHeroSearch() {
-  const heroInput = document.getElementById('hero-quick-search');
+  const heroInput = document.getElementById('hero-search-input');
   const filterInput = document.getElementById('filter-keyword');
   if (heroInput && filterInput) {
     filterInput.value = heroInput.value;
@@ -257,77 +263,78 @@ function handleHeroSearch() {
   }
 }
 
-// --- 3. PROPERTY DETAIL MODAL & MORTGAGE MATH ---
+// --- 3. EDITORIAL PROPERTY DETAIL MODAL ---
 function openPropertyModal(id) {
   const p = propertiesData.find(item => item.id === id);
   if (!p) return;
 
   // Monthly mortgage calculation formula:
-  // Loan amount: 80% LTV, 30-year fixed at 6.5% interest
+  // 80% LTV, 30-year fixed @ 6.5% interest, estimated MD property tax (1.08%), hazard insurance ($110/mo)
   const loanAmount = p.price * 0.8;
   const monthlyRate = 0.065 / 12;
   const numPayments = 360;
-  const monthlyPrincipalInterest = Math.round(
+  const monthlyPI = Math.round(
     loanAmount * (monthlyRate * Math.pow(1 + monthlyRate, numPayments)) / (Math.pow(1 + monthlyRate, numPayments) - 1)
   );
-  // Estimated Maryland property tax (approx 1.08% / 12) + Hazard Insurance (~$110/mo)
   const monthlyTax = Math.round((p.price * 0.0108) / 12);
-  const monthlyInsurance = 110;
-  const totalMonthly = monthlyPrincipalInterest + monthlyTax + monthlyInsurance;
+  const totalMonthly = monthlyPI + monthlyTax + 110;
 
   const modalContainer = document.getElementById('modal-content');
   if (!modalContainer) return;
 
   modalContainer.innerHTML = `
     <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-      <div style="position: relative; aspect-ratio: 16/9; border-radius: var(--radius-lg); overflow: hidden; background: #0B1528;">
+      <div style="position: relative; aspect-ratio: 16/9; border-radius: var(--radius-md); overflow: hidden; background: var(--color-bg-dark);">
         <img src="${p.image}" alt="${p.street}" style="width: 100%; height: 100%; object-fit: cover;">
-        <div style="position: absolute; bottom: 16px; left: 16px; background: rgba(11, 21, 40, 0.94); color: #fff; padding: 0.85rem 1.25rem; border-radius: 8px; backdrop-filter: blur(8px);">
-          <span style="font-family: var(--font-serif); font-size: 1.75rem; font-weight: 700; color: var(--brand-gold); display: block; line-height: 1;">${formatCurrency(p.price)}</span>
-          <span style="font-size: 0.75rem; color: #CBD5E1; margin-top: 4px; display: block;">Est. ${formatCurrency(totalMonthly)}/mo (P&I, MD Taxes, Ins.)</span>
+        <div style="position: absolute; bottom: 16px; left: 16px; background: rgba(18, 24, 32, 0.94); color: #fff; padding: 0.85rem 1.25rem; border-radius: 6px; backdrop-filter: blur(8px);">
+          <span style="font-family: var(--font-serif); font-size: 1.75rem; font-weight: 700; color: var(--color-accent-gold); display: block; line-height: 1;">${formatCurrency(p.price)}</span>
+          <span style="font-size: 0.75rem; color: #CBD5E1; margin-top: 4px; display: block;">Est. ${formatCurrency(totalMonthly)}/month (P&I, MD Taxes, Hazard Ins.)</span>
         </div>
       </div>
 
       <div>
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
-          <span style="font-size: 0.75rem; font-weight: 700; color: var(--brand-gold); text-transform: uppercase; letter-spacing: 0.05em;">
+          <span style="font-size: 0.72rem; font-weight: 700; color: var(--color-accent-gold); text-transform: uppercase; letter-spacing: 0.08em;">
             MLS #${p.mls} • ${p.county} • Status: ${p.status}
           </span>
-          <span style="font-size: 0.75rem; font-weight: 600; color: #64748B;">Listing Agent: ${p.agent}</span>
+          <span style="font-size: 0.75rem; font-weight: 600; color: var(--color-text-muted);">Listing Agent: ${p.agent}</span>
         </div>
-        <h2 style="font-family: var(--font-serif); font-size: 1.85rem; color: var(--brand-navy); margin-top: 0.35rem;">
+        <h2 style="font-family: var(--font-serif); font-size: 1.85rem; color: var(--color-text-main); margin-top: 0.35rem;">
           ${p.street}, ${p.city} MD ${p.zip}
         </h2>
-        <div style="display: flex; gap: 1.5rem; font-size: 0.85rem; font-weight: 600; color: #475569; margin: 0.75rem 0; flex-wrap: wrap;">
-          <span>🛏️ ${p.beds} Bedrooms</span>
-          <span>🛁 ${p.baths} Bathrooms</span>
-          <span>📐 ${p.sqft.toLocaleString()} Finished Sq Ft</span>
-          <span>🏡 ${p.type}</span>
+        <div style="display: flex; gap: 1.5rem; font-size: 0.85rem; font-weight: 600; color: var(--color-text-muted); margin: 0.75rem 0; flex-wrap: wrap;">
+          <span>${p.beds} Bedrooms</span>
+          <span>•</span>
+          <span>${p.baths} Bathrooms</span>
+          <span>•</span>
+          <span>${p.sqft.toLocaleString()} Finished Sq Ft</span>
+          <span>•</span>
+          <span>${p.type}</span>
         </div>
       </div>
 
       <div>
-        <h4 style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--brand-navy); margin-bottom: 0.4rem; font-weight: 700;">Property Overview</h4>
-        <p style="font-size: 0.875rem; color: #334155; line-height: 1.7;">${p.desc}</p>
+        <h4 style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-text-main); margin-bottom: 0.4rem; font-weight: 700;">Property Overview</h4>
+        <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.75;">${p.desc}</p>
       </div>
 
-      <!-- Broker Reciprocity Disclaimer Badge -->
-      <div style="background: #F8FAFC; border: 1px solid var(--brand-border); padding: 0.95rem; border-radius: var(--radius-md); font-size: 0.72rem; color: #64748B; line-height: 1.5;">
-        <strong style="color: var(--brand-navy); display: block; margin-bottom: 2px;">Broker Reciprocity / Bright MLS Notice:</strong>
-        Listing courtesy of Impact Maryland Real Estate via Bright MLS Broker Reciprocity. All information deemed reliable but not guaranteed. Equal Housing Opportunity.
+      <!-- Bright MLS / Broker Reciprocity Notice -->
+      <div style="background: var(--color-bg-base); border: 1px solid var(--color-border); padding: 0.85rem 1rem; border-radius: var(--radius-sm); font-size: 0.72rem; color: var(--color-text-light); line-height: 1.5;">
+        <strong style="color: var(--color-text-main); display: block; margin-bottom: 2px;">Bright MLS Broker Reciprocity:</strong>
+        Information is deemed reliable but not guaranteed. Equal Housing Opportunity.
       </div>
 
-      <!-- In-Person Showing Request Form -->
-      <div id="showing-box" style="background: var(--brand-gold-light); border: 1px solid rgba(197, 155, 39, 0.4); padding: 1.5rem; border-radius: var(--radius-lg);">
-        <h4 style="font-family: var(--font-serif); font-size: 1.2rem; color: var(--brand-navy); margin-bottom: 0.35rem;">Schedule an In-Person Showing</h4>
-        <p style="font-size: 0.78rem; color: #64748B; margin-bottom: 1rem;">Experience this home with a fiduciary advisor. Zero canned scripts or high-pressure tactics.</p>
+      <!-- Private Showing Request Box -->
+      <div id="showing-box" style="background: var(--color-accent-gold-soft); border: 1px solid var(--color-accent-gold-border); padding: 1.75rem; border-radius: var(--radius-md);">
+        <h4 style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--color-text-main); margin-bottom: 0.35rem;">Schedule an In-Person Showing</h4>
+        <p style="font-size: 0.8125rem; color: var(--color-text-muted); margin-bottom: 1.25rem;">Tour this property with a fiduciary advisor. Never an aggressive sales pitch.</p>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem; margin-bottom: 0.85rem;">
-          <input id="show-name" type="text" placeholder="Your Full Name *" style="padding: 0.65rem 0.85rem; border: 1px solid var(--brand-border); border-radius: 6px; font-size: 0.8125rem; background: #fff;">
-          <input id="show-phone" type="tel" placeholder="Phone Number *" style="padding: 0.65rem 0.85rem; border: 1px solid var(--brand-border); border-radius: 6px; font-size: 0.8125rem; background: #fff;">
+          <input id="show-name" type="text" placeholder="Your Full Name *" style="padding: 0.65rem 0.85rem; border: 1px solid var(--color-border); border-radius: var(--radius-xs); font-size: 0.8125rem; background: #fff;">
+          <input id="show-phone" type="tel" placeholder="Direct Phone Number *" style="padding: 0.65rem 0.85rem; border: 1px solid var(--color-border); border-radius: var(--radius-xs); font-size: 0.8125rem; background: #fff;">
         </div>
-        <div id="show-error" style="display: none; color: var(--brand-error); font-size: 0.75rem; margin-bottom: 0.5rem; font-weight: 600;"></div>
-        <button onclick="submitShowing('${p.mls}')" class="btn btn-primary" style="width: 100%; font-size: 0.875rem;">
-          📅 Confirm Showing Appointment
+        <div id="show-error" style="display: none; color: var(--color-error); font-size: 0.75rem; margin-bottom: 0.5rem; font-weight: 600;"></div>
+        <button onclick="submitShowing('${p.mls}')" class="btn btn-primary" style="width: 100%;">
+          Confirm Showing Request
         </button>
       </div>
     </div>
@@ -335,8 +342,7 @@ function openPropertyModal(id) {
 
   const modalOverlay = document.getElementById('property-modal');
   if (modalOverlay) {
-    modalOverlay.style.display = 'flex';
-    setTimeout(() => modalOverlay.classList.add('active'), 10);
+    modalOverlay.classList.add('is-active');
     document.body.style.overflow = 'hidden';
   }
 }
@@ -344,11 +350,8 @@ function openPropertyModal(id) {
 function closePropertyModal() {
   const modalOverlay = document.getElementById('property-modal');
   if (modalOverlay) {
-    modalOverlay.classList.remove('active');
-    setTimeout(() => {
-      modalOverlay.style.display = 'none';
-      document.body.style.overflow = 'auto';
-    }, 200);
+    modalOverlay.classList.remove('is-active');
+    document.body.style.overflow = 'auto';
   }
 }
 
@@ -371,11 +374,11 @@ function submitShowing(mls) {
 
   if (showingBox) {
     showingBox.innerHTML = `
-      <div style="text-align: center; padding: 1rem 0;">
-        <span style="font-size: 2.25rem; display: block; margin-bottom: 0.5rem;">✅</span>
-        <h4 style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--brand-navy); margin-bottom: 0.35rem;">Showing Request Dispatched!</h4>
-        <p style="font-size: 0.84rem; color: #475569; line-height: 1.6;">
-          Thank you, <strong>${name}</strong>! Broker Eric Verdi and our team have received your showing inquiry for <strong>MLS #${mls}</strong>. We will coordinate directly with you at <strong>${phone}</strong> shortly.
+      <div style="text-align: center; padding: 1.25rem 0;">
+        <div style="font-size: 2rem; color: var(--color-accent-gold); margin-bottom: 0.5rem;">✓</div>
+        <h4 style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--color-text-main); margin-bottom: 0.35rem;">Showing Appointment Dispatched</h4>
+        <p style="font-size: 0.875rem; color: var(--color-text-muted); line-height: 1.6; max-width: 440px; margin: 0 auto;">
+          Thank you, <strong>${name}</strong>. Broker Eric Verdi and our advisory team have received your showing inquiry for <strong>MLS #${mls}</strong>. We will coordinate directly with you at <strong>${phone}</strong> shortly.
         </p>
       </div>
     `;
@@ -420,7 +423,7 @@ function goToStep(num) {
     target.style.display = 'block';
   }
 
-  // Update progress bar percentage
+  // Update progress bar
   const progressBar = document.getElementById('wizard-progress');
   if (progressBar) {
     progressBar.style.width = (num * 25) + '%';
@@ -459,65 +462,12 @@ function submitValuation() {
   if (progressBar) progressBar.style.display = 'none';
 }
 
-// --- 5. FLOATING AI CONVERSATIONAL ASSISTANT ---
-function toggleAiChat() {
-  const chatWin = document.getElementById('ai-chat-window');
-  if (!chatWin) return;
-  const isHidden = chatWin.style.display === 'none' || !chatWin.style.display;
-  chatWin.style.display = isHidden ? 'flex' : 'none';
-
-  if (isHidden) {
-    const input = document.getElementById('chat-input');
-    if (input) setTimeout(() => input.focus(), 100);
-  }
-}
-
-function sendChatMessage(preset) {
-  const input = document.getElementById('chat-input');
-  const text = preset || (input ? input.value : '');
-  if (!text || !text.trim()) return;
-
-  const box = document.getElementById('chat-messages');
-  if (!box) return;
-
-  // Append user message
-  const userMsgEl = document.createElement('div');
-  userMsgEl.className = 'ai-msg ai-msg-user';
-  userMsgEl.innerText = text;
-  box.appendChild(userMsgEl);
-
-  if (input) input.value = '';
-  box.scrollTop = box.scrollHeight;
-
-  // Contextual Assistant Responses
-  setTimeout(() => {
-    let reply = "At Impact Maryland Real Estate, we operate as true client fiduciaries. We never use canned sales scripts. What specific questions can Broker Eric Verdi answer for you?";
-    const low = text.toLowerCase();
-
-    if (low.includes('worth') || low.includes('valuation') || low.includes('equity') || low.includes('sell')) {
-      reply = "Our home valuations analyze exact closed comps on your specific street—not generic algorithmic estimates. Scroll up to our Home Valuation section or call Broker Eric Verdi directly at (240) 815-0890 to get started!";
-    } else if (low.includes('urbana') || low.includes('frederick') || low.includes('middletown') || low.includes('keedysville')) {
-      reply = "We actively serve Frederick, Urbana, Middletown, and Keedysville! For example, Urbana offers top blue-ribbon schools and I-270 commuter positioning, while Keedysville offers scenic mountain acreage. Check out our active listings above.";
-    } else if (low.includes('eric') || low.includes('verdi') || low.includes('talk') || low.includes('agent') || low.includes('contact')) {
-      reply = "Broker Eric Verdi can be reached directly at (240) 815-0890 or via email at eric@impactmarylandrealestate.com. Our office is located at 5300 Westview Drive in Frederick, MD.";
-    } else if (low.includes('fee') || low.includes('commission') || low.includes('cost')) {
-      reply = "In alignment with our fiduciary ethos, we offer transparent commission structures with zero hidden fees. We discuss net proceeds openly before any listing agreements are signed.";
-    }
-
-    const aiMsgEl = document.createElement('div');
-    aiMsgEl.className = 'ai-msg ai-msg-ai';
-    aiMsgEl.innerText = reply;
-    box.appendChild(aiMsgEl);
-    box.scrollTop = box.scrollHeight;
-  }, 400);
-}
-
-// --- 6. GLOBAL INITIALIZATION & ACCESSIBILITY LISTENERS ---
+// --- 5. GLOBAL INITIALIZATION & ACCESSIBILITY LISTENERS ---
 document.addEventListener('DOMContentLoaded', () => {
   // Initial render of listings
   renderProperties();
 
-  // Close modal when clicking outside modal content
+  // Close modal when clicking on backdrop
   const modalOverlay = document.getElementById('property-modal');
   if (modalOverlay) {
     modalOverlay.addEventListener('click', (e) => {
@@ -527,14 +477,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Keyboard shortcut: Escape key closes modal & AI chat
+  // Keyboard shortcut: Escape key closes modal
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       closePropertyModal();
-      const chatWin = document.getElementById('ai-chat-window');
-      if (chatWin && chatWin.style.display === 'flex') {
-        chatWin.style.display = 'none';
-      }
     }
   });
 });
