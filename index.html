@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impact Maryland Real Estate | Fiduciary Property & Seller Platform</title>
+  <meta name="description" content="Impact Maryland Real Estate is an independent regional brokerage led by Eric Verdi. Licensed in MD, PA, and WV with 1,000+ homes sold and 150+ 5-star reviews.">
+  <link rel="canonical" href="https://impactmarylandrealestate.com">
+
+  <!-- Open Graph / Social Cards -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://impactmarylandrealestate.com">
+  <meta property="og:title" content="Impact Maryland Real Estate | Protecting Clients & Delivering Exceptional Results">
+  <meta property="og:description" content="Fiduciary buyer and seller representation with zero canned scripts. Serving Frederick, Urbana, Middletown, and surrounding counties.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80">
+
+  <!-- Google Fonts: Playfair Display + Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+  <!-- Production Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Local SEO: Schema.org RealEstateAgent Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "Impact Maryland Real Estate",
+    "url": "https://impactmarylandrealestate.com",
+    "logo": "https://impactmarylandrealestate.com/wp-content/uploads/2018/07/IMPACT-Black.jpg",
+    "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+    "description": "Independent real estate brokerage operating across Maryland, Pennsylvania, and West Virginia with 1,000+ homes sold and 150+ 5-star reviews.",
+    "telephone": "+1-240-815-0890",
+    "email": "info@impactmarylandrealestate.com",
+    "priceRange": "$$$",
+    "founder": {
+      "@type": "Person",
+      "name": "Eric Verdi",
+      "jobTitle": "Broker / Owner"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "5300 Westview Drive, Suite 101",
+      "addressLocality": "Frederick",
+      "addressRegion": "MD",
+      "postalCode": "21703",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 39.3871,
+      "longitude": -77.4105
+    },
+    "areaServed": [
+      "Frederick County",
+      "Washington County",
+      "Montgomery County",
+      "Carroll County",
+      "Middletown",
+      "Urbana",
+      "Keedysville"
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "171"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- TOP TRUST NOTIFICATION BAR -->
+  <div class="trust-bar">
+    <div class="container">
+      <div>
+        <span class="trust-badge-dot"></span>
+        <span>Licensed in MD, PA & WV • Over 1,000 Homes Sold • 150+ 5-Star Reviews</span>
+      </div>
+      <div>
+        <span>Headquarters: Frederick, MD • </span>
+        <a href="tel:2408150890" style="color: var(--brand-gold); font-weight: 700;">📞 (240) 815-0890</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <header class="main-header">
+    <div class="container nav-container">
+      <a href="#" class="brand-logo">
+        <div class="logo-badge">IM</div>
+        <div>
+          <span class="brand-name">IMPACT MARYLAND</span>
+          <span class="brand-sub">Real Estate Brokerage</span>
+        </div>
+      </a>
+
+      <nav class="desktop-nav">
+        <a href="#properties-section">Search Homes</a>
+        <a href="#valuation-section" style="color: var(--brand-gold); font-weight: 700;">Home Valuation</a>
+        <a href="#strategy-section">Selling Strategy</a>
+        <a href="#communities-section">Communities</a>
+        <a href="#team-section">About & Team</a>
+        <a href="#reviews-section">Reviews</a>
+        <a href="#join-section">Join Impact</a>
+      </nav>
+
+      <div>
+        <a href="#valuation-section" class="btn btn-primary" style="padding: 0.65rem 1.25rem; font-size: 0.8125rem;">
+          What's My Home Worth?
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-pill">
+          <span>★★★★★ 150+ Five-Star Client Reviews</span>
+          <span>•</span>
+          <span>Serving Central MD Since 2017</span>
+        </div>
+
+        <h1>
+          Real Estate Fiduciaries. <span class="gold-italic">Zero Scripts.</span> Unmatched Regional Results.
+        </h1>
+
+        <p>
+          Over 1,000 homes sold across Central Maryland, Pennsylvania, and West Virginia. We never practice canned sales scripts—we listen, protect your equity, and execute with disciplined market precision.
+        </p>
+
+        <!-- Primary Conversion Actions -->
+        <div class="hero-actions">
+          <a href="#valuation-section" class="btn btn-primary">
+            📊 What's My Home Worth? (Free Report)
+          </a>
+          <a href="#properties-section" class="btn btn-secondary">
+            🔍 Search Active MLS Listings
+          </a>
+        </div>
+
+        <!-- Quick Search Form -->
+        <div class="hero-search-box">
+          <input id="hero-quick-search" type="text" placeholder="Search by neighborhood, city, address (e.g. Urbana, Frederick, Keedysville)...">
+          <button onclick="handleHeroSearch()" class="btn btn-primary" style="padding: 0.65rem 1.25rem;">Search</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST METRICS BAR -->
+  <section class="metrics-section">
+    <div class="container metrics-grid">
+      <div class="metric-item">
+        <strong>1,000+</strong>
+        <span>Homes Sold</span>
+        <p>Proven regional track record</p>
+      </div>
+      <div class="metric-item">
+        <strong style="color: var(--brand-gold);">150+</strong>
+        <span>5-Star Reviews</span>
+        <p>Consistent client satisfaction</p>
+      </div>
+      <div class="metric-item">
+        <strong>98.4%</strong>
+        <span>Sale-to-List Ratio</span>
+        <p>Street-level pricing accuracy</p>
+      </div>
+      <div class="metric-item">
+        <strong style="color: #10B981;">3 States</strong>
+        <span>Tri-State Licensing</span>
+        <p>Licensed in MD, PA & WV</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FIDUCIARY PHILOSOPHY -->
+  <section id="strategy-section" style="padding: 5rem 0; background: #F8FAFC; border-bottom: 1px solid var(--brand-border);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">The Impact Standard</span>
+        <h2>Why We Never "Sell"</h2>
+        <p>In an industry saturated with rehearsed sales scripts, we operate as true client fiduciaries.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <div style="font-size: 2rem; margin-bottom: 0.75rem;">⚖️</div>
+          <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Fiduciary First, Always</h3>
+          <p style="font-size: 0.8125rem; color: #475569; line-height: 1.6;">
+            If staying in your current home or refinancing makes more financial sense than selling, we tell you directly. Our allegiance is to your financial wellness.
+          </p>
+        </div>
+
+        <div class="card">
+          <div style="font-size: 2rem; margin-bottom: 0.75rem;">🎯</div>
+          <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Street-Level Micro Comps</h3>
+          <p style="font-size: 0.8125rem; color: #475569; line-height: 1.6;">
+            We evaluate property equity street by street and subdivision by subdivision—not broad county averages. Our pricing accuracy preserves maximum net proceeds.
+          </p>
+        </div>
+
+        <div class="card">
+          <div style="font-size: 2rem; margin-bottom: 0.75rem;">🛡️</div>
+          <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Ruthless Contract Defense</h3>
+          <p style="font-size: 0.8125rem; color: #475569; line-height: 1.6;">
+            We audit structural mechanics before writing contracts, defend your earnest money deposits, and engineer appraisal gap safeguards to protect your assets.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROPERTY SEARCH PLATFORM -->
+  <section id="properties-section" class="property-search-section">
+    <div class="container">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2rem; flex-wrap: gap;">
+        <div>
+          <span class="section-tag">MLS Inventory Hub</span>
+          <h2>Featured Central Maryland Properties</h2>
+          <p style="font-size: 0.875rem; color: #64748B;">Verified listings refreshed from Bright MLS across Frederick, Washington, and surrounding counties.</p>
+        </div>
+        <div style="font-size: 0.8125rem; color: #64748B; font-weight: 600;">
+          Showing <span id="property-count" style="color: var(--brand-navy); font-weight: 700;">7</span> properties
+        </div>
+      </div>
+
+      <!-- Live Search & Filter Bar -->
+      <div class="filter-bar">
+        <div class="filter-group">
+          <label>Keyword Search</label>
+          <input id="filter-keyword" type="text" oninput="renderProperties()" placeholder="City, street, or MLS#...">
+        </div>
+        <div class="filter-group">
+          <label>County</label>
+          <select id="filter-county" onchange="renderProperties()">
+            <option value="All">All Counties</option>
+            <option value="Frederick County">Frederick County</option>
+            <option value="Washington County">Washington County</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label>Price Range</label>
+          <select id="filter-price" onchange="renderProperties()">
+            <option value="All">Any Price</option>
+            <option value="under500">Under $500,000</option>
+            <option value="500to800">$500,000 - $800,000</option>
+            <option value="over800">$800,000+</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label>Bedrooms</label>
+          <select id="filter-beds" onchange="renderProperties()">
+            <option value="0">Any Beds</option>
+            <option value="3">3+ Beds</option>
+            <option value="4">4+ Beds</option>
+            <option value="5">5+ Beds</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label>Sort By</label>
+          <select id="filter-sort" onchange="renderProperties()">
+            <option value="newest">Newest First</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Properties Grid -->
+      <div id="properties-grid" class="grid-3">
+        <!-- Injected dynamically by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- SELLER VALUATION WIZARD -->
+  <section id="valuation-section" class="valuation-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Seller Equity Engine</span>
+        <h2>What Is Your Central Maryland Home Worth?</h2>
+        <p>Skip generic automated internet guesses. We analyze exact subdivision comps, recent upgrades, and buyer demand curves to calculate an accurate valuation range.</p>
+      </div>
+
+      <div class="wizard-card">
+        <div id="wizard-progress-bar" class="progress-track">
+          <div id="wizard-progress" class="progress-fill"></div>
+        </div>
+
+        <!-- Step 1 -->
+        <div id="step-1" class="step-container">
+          <h3>Step 1: Property Address</h3>
+          <p style="font-size: 0.75rem; color: #64748B;">Where is your home located?</p>
+          <div class="form-group">
+            <label>Street Address *</label>
+            <input id="val-street" type="text" placeholder="e.g. 3484 Urbana Pike">
+          </div>
+          <div class="input-row">
+            <div class="form-group">
+              <label>City</label>
+              <input id="val-city" type="text" value="Frederick">
+            </div>
+            <div class="form-group">
+              <label>State</label>
+              <select id="val-state">
+                <option value="MD">Maryland (MD)</option>
+                <option value="PA">Pennsylvania (PA)</option>
+                <option value="WV">West Virginia (WV)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>ZIP *</label>
+              <input id="val-zip" type="text" placeholder="21704">
+            </div>
+          </div>
+          <div style="display: flex; justify-content: flex-end; margin-top: 1rem;">
+            <button onclick="goToStep(2)" class="btn btn-primary">Next: Home Details →</button>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div id="step-2" class="step-container" style="display: none;">
+          <h3>Step 2: Property Characteristics</h3>
+          <div class="form-group">
+            <label>Property Type</label>
+            <select id="val-type">
+              <option value="Single Family">Single Family Detached</option>
+              <option value="Townhome">Townhome</option>
+              <option value="Condo">Condominium</option>
+              <option value="Acreage">Acreage / Farmette</option>
+            </select>
+          </div>
+          <div class="input-row">
+            <div class="form-group">
+              <label>Bedrooms</label>
+              <select id="val-beds">
+                <option value="3">3 Bedrooms</option>
+                <option value="4" selected>4 Bedrooms</option>
+                <option value="5">5+ Bedrooms</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Bathrooms</label>
+              <select id="val-baths">
+                <option value="2">2 Baths</option>
+                <option value="3" selected>3 Baths</option>
+                <option value="4">4+ Baths</option>
+              </select>
+            </div>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-top: 1rem;">
+            <button onclick="goToStep(1)" class="btn btn-secondary">← Back</button>
+            <button onclick="goToStep(3)" class="btn btn-primary">Next: Condition & Upgrades →</button>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div id="step-3" class="step-container" style="display: none;">
+          <h3>Step 3: Condition & Upgrades</h3>
+          <div class="form-group">
+            <label>Overall Condition</label>
+            <select id="val-condition">
+              <option value="Move-in Ready">Move-in Ready (Well Maintained)</option>
+              <option value="Needs Minor TLC">Needs Minor Cosmetic TLC</option>
+              <option value="Full Renovation">Complete Renovation Needed</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Estimated Selling Horizon</label>
+            <select id="val-horizon">
+              <option value="0-30 days">Immediately (0 - 30 days)</option>
+              <option value="1-3 months" selected>1 - 3 months</option>
+              <option value="3-6 months">3 - 6 months</option>
+              <option value="Just curious">Just curious / exploring equity</option>
+            </select>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-top: 1rem;">
+            <button onclick="goToStep(2)" class="btn btn-secondary">← Back</button>
+            <button onclick="goToStep(4)" class="btn btn-primary">Next: Delivery Contact →</button>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div id="step-4" class="step-container" style="display: none;">
+          <h3>Step 4: Where Should We Send Your Report?</h3>
+          <p style="font-size: 0.75rem; color: #64748B;">Calculated by Broker Eric Verdi. 100% confidential with zero sales pressure.</p>
+          <div class="form-group">
+            <label>Full Name *</label>
+            <input id="val-name" type="text" placeholder="John & Sarah Miller">
+          </div>
+          <div class="input-row">
+            <div class="form-group">
+              <label>Email Address *</label>
+              <input id="val-email" type="email" placeholder="john@example.com">
+            </div>
+            <div class="form-group">
+              <label>Phone Number *</label>
+              <input id="val-phone" type="tel" placeholder="(240) 555-0188">
+            </div>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.25rem;">
+            <button onclick="goToStep(3)" class="btn btn-secondary">← Back</button>
+            <button onclick="submitValuation()" class="btn btn-primary">Get My Valuation Report 🎉</button>
+          </div>
+        </div>
+
+        <!-- Success Message -->
+        <div id="step-success" style="display: none; text-align: center; padding: 2rem 0;">
+          <div style="font-size: 3rem; margin-bottom: 0.5rem;">🎉</div>
+          <h3 style="font-size: 1.75rem; margin-bottom: 0.5rem;">Valuation Request Received!</h3>
+          <p style="font-size: 0.875rem; color: #475569; max-width: 480px; margin: 0 auto 1.5rem; line-height: 1.6;">
+            Thank you, <strong id="confirm-name">Client</strong>! Broker Eric Verdi and our research team are currently pulling closed comps for <strong id="confirm-street">your home</strong>. We will prepare your detailed equity report shortly.
+          </p>
+          <div style="background: #F8FAFC; border: 1px solid var(--brand-border); padding: 1rem; border-radius: 8px; font-size: 0.75rem; color: #64748B; max-width: 400px; margin: 0 auto;">
+            🛡️ Zero sales pressure guarantee. We never share your contact information with external parties.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REGIONAL COMMUNITIES -->
+  <section id="communities-section" style="padding: 5rem 0; background: var(--brand-white); border-bottom: 1px solid var(--brand-border);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Local Authority</span>
+        <h2>Central Maryland Communities</h2>
+        <p>From historic town centers to resort master-planned communities and scenic mountain acreage.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <span style="font-size: 0.75rem; font-weight: 700; color: var(--brand-gold); text-transform: uppercase;">Frederick County</span>
+          <h3 style="font-size: 1.35rem; margin: 0.25rem 0 0.5rem;">Downtown Frederick</h3>
+          <p style="font-size: 0.8125rem; color: #475569; line-height: 1.6;">
+            Historic Federal architecture, Carroll Creek restaurants, Baker Park, and direct MARC train commuter service to Washington D.C.
+          </p>
+          <div style="margin-top: 1rem; font-size: 0.8125rem; font-weight: 700; color: var(--brand-navy);">
+            Median Home Price: $475,000
+          </div>
+        </div>
+
+        <div class="card">
+          <span style="font-size: 0.75rem; font-weight: 700; color: var(--brand-gold); text-transform: uppercase;">Frederick County</span>
+          <h3 style="font-size: 1.35rem; margin: 0.25rem 0 0.5rem;">Villages of Urbana</h3>
+          <p style="font-size: 0.8125rem; color: #475569; line-height: 1.6;">
+            Top blue-ribbon schools, resort community swimming pools, tennis courts, and premier I-270 commuter positioning.
+          </p>
+          <div style="margin-top: 1rem; font-size: 0.8125rem; font-weight: 700; color: var(--brand-navy);">
+            Median Home Price: $685,000
+          </div>
+        </div>
+
+        <div class="card">
+          <span style="font-size: 0.75rem; font-weight: 700; color: var(--brand-gold); text-transform: uppercase;">Washington County</span>
+          <h3 style="font-size: 1.35rem; margin: 0.25rem 0 0.5rem;">Keedysville & Boonsboro</h3>
+          <p style="font-size: 0.8125rem; color: #475569; line-height: 1.6;">
+            Picturesque country living, historic stone estates, panoramic mountain views, and exceptional square footage per dollar.
+          </p>
+          <div style="margin-top: 1rem; font-size: 0.8125rem; font-weight: 700; color: var(--brand-navy);">
+            Median Home Price: $385,000
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM ROSTER -->
+  <section id="team-section" style="padding: 5rem 0; background: #F8FAFC; border-bottom: 1px solid var(--brand-border);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Fiduciary Leadership</span>
+        <h2>Meet Our Advisory Team</h2>
+        <p>Experienced fiduciaries with over 1,000 career transactions across Maryland, Pennsylvania, and West Virginia.</p>
+      </div>
+
+      <div class="grid-3">
+        <!-- Eric Verdi -->
+        <div class="card">
+          <div class="logo-badge" style="width: 50px; height: 50px; font-size: 1.5rem; margin-bottom: 1rem;">EV</div>
+          <h3 style="font-size: 1.25rem;">Eric Verdi</h3>
+          <span style="font-size: 0.75rem; font-weight: 600; color: var(--brand-gold); display: block;">Broker / Owner & Founder</span>
+          <span style="font-size: 0.6875rem; color: #64748B;">MD License #554902 • Licensed in MD, PA, WV</span>
+          <p style="font-size: 0.8125rem; color: #475569; line-height: 1.6; margin: 0.75rem 0;">
+            18 years of high-stakes fiduciary negotiation. Over 650 personal career sales. Dedicated to honest, data-backed client representation.
+          </p>
+          <div style="display: flex; justify-content: space-between; font-size: 0.75rem; font-weight: 700; padding-top: 0.75rem; border-top: 1px solid #F1F5F9;">
+            <span>📞 (240) 815-0890</span>
+            <span style="color: var(--brand-gold);">94 Reviews (5.0 ★)</span>
+          </div>
+        </div>
+
+        <!-- Janelle Wilson -->
+        <div class="card">
+          <div class="logo-badge" style="width: 50px; height: 50px; font-size: 1.5rem; margin-bottom: 1rem; background: var(--brand-gold-light); color: var(--brand-gold);">JW</div>
+          <h3 style="font-size: 1.25rem;">Janelle Wilson</h3>
+          <span style="font-size: 0.75rem; font-weight: 600; color: var(--brand-gold); display: block;">Associate Broker / Senior Sales</span>
+          <span style="font-size: 0.6875rem; color: #64748B;">MD License #612849</span>
+          <p style="font-size: 0.8125rem; color: #475569; line-height: 1.6; margin: 0.75rem 0;">
+            12+ years specializing in Urbana, New Market, and move-up families. Renowned for analytical comparative market analyses.
+          </p>
+          <div style="display: flex; justify-content: space-between; font-size: 0.75rem; font-weight: 700; padding-top: 0.75rem; border-top: 1px solid #F1F5F9;">
+            <span>📞 (240) 815-0891</span>
+            <span style="color: var(--brand-gold);">42 Reviews (5.0 ★)</span>
+          </div>
+        </div>
+
+        <!-- Josie Medwick -->
+        <div class="card">
+          <div class="logo-badge" style="width: 50px; height: 50px; font-size: 1.5rem; margin-bottom: 1rem; background: #F1F5F9; color: var(--brand-navy);">JM</div>
+          <h3 style="font-size: 1.25rem;">Josephine "Josie" Medwick</h3>
+          <span style="font-size: 0.75rem; font-weight: 600; color: var(--brand-gold); display: block;">Realtor & Client Advocate</span>
+          <span style="font-size: 0.6875rem; color: #64748B;">MD License #673910</span>
+          <p style="font-size: 0.8125rem; color: #475569; line-height: 1.6; margin: 0.75rem 0;">
+            Historic property authority and aggressive client champion across Downtown Frederick, Walkersville, and Washington County.
+          </p>
+          <div style="display: flex; justify-content: space-between; font-size: 0.75rem; font-weight: 700; padding-top: 0.75rem; border-top: 1px solid #F1F5F9;">
+            <span>📞 (240) 815-0892</span>
+            <span style="color: var(--brand-gold);">31 Reviews (5.0 ★)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VERIFIED REVIEWS -->
+  <section id="reviews-section" style="padding: 5rem 0; background: var(--brand-white); border-bottom: 1px solid var(--brand-border);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Client Experiences</span>
+        <h2>150+ Verified Client Reviews</h2>
+        <p>Unvarnished feedback from families across Central Maryland.</p>
+      </div>
+
+      <div class="grid-3" style="grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));">
+        <div class="card" style="background: #F8FAFC;">
+          <div style="color: #F59E0B; font-weight: 700; margin-bottom: 0.5rem;">★★★★★ <span style="font-size: 0.75rem; color: #64748B; margin-left: 0.5rem;">Middletown to Keedysville</span></div>
+          <h4 style="font-size: 1.15rem; margin-bottom: 0.5rem;">"Sold $28k Over Asking & Found Our Dream Acreage"</h4>
+          <p style="font-size: 0.8125rem; color: #475569; line-height: 1.6; font-style: italic;">
+            "Eric Verdi is an advocate in the truest sense. Selling while buying with two young kids is terrifying, but Eric’s strategic roadmap made it completely seamless. He negotiated rent-back terms so we never had to move twice."
+          </p>
+          <div style="margin-top: 1rem; font-size: 0.75rem; font-weight: 600; color: #334155;">— David & Sarah M.</div>
+        </div>
+
+        <div class="card" style="background: #F8FAFC;">
+          <div style="color: #F59E0B; font-weight: 700; margin-bottom: 0.5rem;">★★★★★ <span style="font-size: 0.75rem; color: #64748B; margin-left: 0.5rem;">Villages of Urbana</span></div>
+          <h4 style="font-size: 1.15rem; margin-bottom: 0.5rem;">"Unmatched Data & Precision — 4 Offers in 48 Hours"</h4>
+          <p style="font-size: 0.8125rem; color: #475569; line-height: 1.6; font-style: italic;">
+            "Janelle Wilson showed us micro-trends on our specific street in Urbana. Her staging crew transformed our home, photography was stunning, and we had 4 strong offers on our first weekend."
+          </p>
+          <div style="margin-top: 1rem; font-size: 0.75rem; font-weight: 600; color: #334155;">— Brian K.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AGENT RECRUITMENT -->
+  <section id="join-section" style="padding: 5rem 0; background: var(--brand-navy); color: #fff;">
+    <div class="container" style="text-align: center; max-width: 680px;">
+      <span class="section-tag" style="color: #34D399;">Careers & Agent Partnership</span>
+      <h2 style="color: #fff; margin: 0.5rem 0 1rem;">Are You a Licensed Agent Looking for Fiduciary Culture?</h2>
+      <p style="color: #CBD5E1; font-size: 0.875rem; line-height: 1.6; margin-bottom: 2rem;">
+        Zero corporate franchise royalty cuts. One-on-one mentorship with Broker Eric Verdi. Full in-house marketing and transaction management. Join an independent powerhouse.
+      </p>
+      <a href="mailto:eric@impactmarylandrealestate.com?subject=Confidential%20Agent%20Career%20Inquiry" class="btn btn-primary">
+        Request Confidential Agent Coffee with Eric Verdi
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <strong style="color: #fff; font-family: var(--font-serif); font-size: 1.2rem; display: block; margin-bottom: 0.5rem;">
+            Impact Maryland Real Estate
+          </strong>
+          <p style="margin-bottom: 0.5rem;">
+            Headquarters: 5300 Westview Drive, Suite 101<br>Frederick, MD 21703
+          </p>
+          <p style="color: var(--brand-gold); font-weight: 700;">Direct: (240) 815-0890</p>
+          <p>info@impactmarylandrealestate.com</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Service Areas</h4>
+          <ul>
+            <li>Frederick County, MD</li>
+            <li>Washington County, MD</li>
+            <li>Montgomery County, MD</li>
+            <li>Carroll County, MD</li>
+            <li>Pennsylvania & West Virginia</li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Portals</h4>
+          <ul>
+            <li><a href="#properties-section">Active MLS Search</a></li>
+            <li><a href="#valuation-section">Home Valuation Wizard</a></li>
+            <li><a href="#strategy-section">Selling Playbook</a></li>
+            <li><a href="#join-section">Agent Careers</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Regulatory & MLS</h4>
+          <p>Broker: Eric Verdi (#554902)<br>Licensed in MD, PA, and WV.<br>Equal Housing Opportunity.<br>REALTOR® Member.</p>
+        </div>
+      </div>
+
+      <div class="footer-legal">
+        <p>
+          <strong>MLS / IDX Disclaimer:</strong> The property data displayed on this website is provided through the Bright MLS and Regional Board Broker Reciprocity program. Real estate listings held by brokerage firms other than Impact Maryland Real Estate are marked with the Internet Data Exchange (IDX) logo and detailed information includes the name of the listing broker. Information is deemed reliable but is not guaranteed and should be independently verified.
+        </p>
+        <div style="display: flex; justify-content: space-between; margin-top: 1rem;">
+          <span>© 2026 Impact Maryland Real Estate. All rights reserved.</span>
+          <span>Fiduciary Real Estate Architecture</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- PROPERTY DETAIL MODAL -->
+  <div id="property-modal" class="modal-overlay">
+    <div class="modal-content">
+      <button onclick="closePropertyModal()" class="modal-close">✕</button>
+      <div id="modal-content">
+        <!-- Rendered by app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING AI ASSISTANT -->
+  <div id="ai-chat-bubble" class="ai-bubble">
+    <button onclick="toggleAiChat()" class="ai-bubble-btn">
+      <span>🤖</span>
+      <span>Impact Assistant</span>
+    </button>
+  </div>
+
+  <div id="ai-chat-window" class="ai-window">
+    <div class="ai-header">
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <span style="color: var(--brand-gold); font-weight: 700;">IM</span>
+        <span style="font-family: var(--font-serif); font-size: 0.875rem; font-weight: 700;">Impact Real Estate Assistant</span>
+      </div>
+      <button onclick="toggleAiChat()" style="background: none; border: none; color: #94A3B8; font-size: 1rem; cursor: pointer;">✕</button>
+    </div>
+
+    <div id="chat-messages" class="ai-body">
+      <div class="ai-msg ai-msg-ai">
+        👋 Hello! I am the Impact Real Estate Assistant. How can I assist your real estate journey today?
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 0.35rem;">
+        <button onclick="sendChatMessage('What is my home worth?')" style="background: #fff; border: 1px solid #CBD5E1; padding: 0.25rem 0.5rem; border-radius: 999px; font-size: 0.6875rem; cursor: pointer;">What's my home worth?</button>
+        <button onclick="sendChatMessage('Show homes in Urbana')" style="background: #fff; border: 1px solid #CBD5E1; padding: 0.25rem 0.5rem; border-radius: 999px; font-size: 0.6875rem; cursor: pointer;">Homes in Urbana</button>
+        <button onclick="sendChatMessage('Connect me with Broker Eric Verdi')" style="background: #fff; border: 1px solid #CBD5E1; padding: 0.25rem 0.5rem; border-radius: 999px; font-size: 0.6875rem; cursor: pointer;">Talk to Eric Verdi</button>
+      </div>
+    </div>
+
+    <div class="ai-input-bar">
+      <input id="chat-input" type="text" placeholder="Ask a question..." onkeydown="if(event.key==='Enter') sendChatMessage()">
+      <button onclick="sendChatMessage()" class="btn btn-navy" style="padding: 0.4rem 0.75rem; font-size: 0.75rem;">Send</button>
+    </div>
+  </div>
+
+  <!-- APPLICATION ENGINE -->
+  <script src="app.js"></script>
+</body>
+</html>
